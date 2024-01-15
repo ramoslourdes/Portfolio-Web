@@ -59,6 +59,7 @@ body {
     font-size: var(--normal-font-size);
     position: relative;
     transition: background-color .4s;
+    max-width: 100vw;
 }
 
 a {
@@ -1035,6 +1036,7 @@ footer {
     transition: background-color .4s;
     cursor: pointer;
     transition: bottom .4s, background-color .4s, color .4s;
+    z-index: 100;
 }
 
 .gohome__button:hover {

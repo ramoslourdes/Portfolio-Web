@@ -49,7 +49,7 @@ window.addEventListener('scroll', function () {
 
     this.document.querySelectorAll('section[id]').forEach(section => {
         const sectionTop = section.offsetTop;
-        const sectionBottom = section.offsetTop + section.offsetHeight;
+        const sectionBottom = sectionTop + section.offsetHeight;
 
         if (scrollPosition >= (sectionTop - 100) && scrollPosition < sectionBottom) {
             const currentSectionId = section.id;
@@ -144,7 +144,11 @@ const sr = ScrollReveal({
     delay: 400,
 });
 
-sr.reveal(`.home__perfil, .about__name, .about__info, .contact__mail`, { origin: 'right' });
-sr.reveal(`.home__name, .home__info, .about__perfil, .contact__card, .contact__social`, { origin: 'left' });
+document.addEventListener('DOMContentLoaded', () => {
+    if (window.screen.width >= 700) {
+        sr.reveal(`.home__perfil, .about__name, .about__info, .contact__mail`, { origin: 'right' });
+        sr.reveal(`.home__name, .home__info, .about__perfil, .contact__card, .contact__social`, { origin: 'left' });
+    }
+})
 
 sr.reveal(`.services__card, .projects__card`, { interval: 100 });
